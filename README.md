@@ -98,6 +98,7 @@ Note: I currently have not written any tests, since I have tried the program and
 
 ## History
 * [lib\_work\_login](#lib\_work\_login)
+   * 0.1.1 - Forgot to recreate egg stuff, pushing to pypi again
    * 0.1.0 - Initial commit
 
 ## Credits
