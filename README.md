@@ -45,6 +45,8 @@ work_login_instance.login()  # logs you in
 
 #### From the Command Line
 
+NOTE: Even better, configure a custom keyboard shortcut! I use control alt l.
+
 run in a terminal: ```login```
 
 If you need to reconfigure (run in a terminal) ```configure```
