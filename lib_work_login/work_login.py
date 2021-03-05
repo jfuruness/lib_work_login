@@ -43,11 +43,9 @@ class WorkLogin:
         # I know I could be using proper logging
         # But this is supposed to be a quick package
         if not os.path.exists(self.conf_path):
-            logging.info("It appears that you have not configured your work login")
-            logging.info("Note that this is only for logging in through a terminal")
-            logging.info("Please enter the commands, separated by the enter key")
+            logging.info("Configuring work login")
             cmds = [input("Next command, or hit enter:\n")]
-            # Ugh neesd 3.6 compatibility, but with 3.8 could use walrus here
+            # Ugh needs 3.6 compatibility, but with 3.8 could use walrus here
             while cmds[-1] != "":
                 cmds.append(input("Next command, or hit enter:\n"))
             with open(self.conf_path, "w+") as f:
@@ -57,17 +55,10 @@ class WorkLogin:
         """Runs a command slowly so as not to error"""
 
         new_cmd = cmd.replace("\n", "")
-        if new_cmd == "tmux-split":
-            self._split_tmux()
-        else:
-            for c in new_cmd:
-                self._type_key(c)
-            self._type_key(Key.enter)
-
-        if "ssh" in cmd:
-            time.sleep(3)
-        else:
-            time.sleep(.1)
+        for c in new_cmd:
+            self._type_key(c)
+        self._type_key(Key.enter)
+        time.sleep(.1)
 
     def _type_key(self, key):
         """Types a key with a delay"""
@@ -76,17 +67,3 @@ class WorkLogin:
         time.sleep(.005)
         self.keyboard.release(key)
         time.sleep(.005)
-
-    def _split_tmux(self):
-        """Splits tmux pane in half"""
-
-        self.keyboard.press(Key.ctrl)
-        self.keyboard.press("b")
-        self.keyboard.release("b")
-        self.keyboard.release(Key.ctrl)
-        time.sleep(.01)
-        self.keyboard.press(Key.shift)
-        self.keyboard.press("'")
-        self.keyboard.release("'")
-        self.keyboard.release(Key.shift)
-        time.sleep(.5)
