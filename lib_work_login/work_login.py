@@ -8,10 +8,12 @@ __maintainer__ = "Justin Furuness"
 __email__ = "jfuruness@gmail.com"
 __status__ = "Development"
 
+# Default python packages
 import logging
 import os
 import time
 
+# pip installed python packages
 from pynput.keyboard import Key, Controller
 
 
