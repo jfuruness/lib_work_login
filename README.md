@@ -60,9 +60,6 @@ To install from source and develop:
 ```
 git clone https://github.com/jfuruness/lib_work_login.git
 cd lib_work_login
-pip3 install wheel --upgrade
-pip3 install -r requirements.txt --upgrade
-python3 setup.py sdist bdist_wheel
 python3 setup.py develop
 ```
 
