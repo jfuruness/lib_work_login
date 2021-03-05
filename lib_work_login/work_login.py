@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""This file contains a class that can log you into work"""
-
 __author__ = "Justin Furuness"
 __credits__ = ["Justin Furuness"]
 __Lisence__ = "BSD"
@@ -10,13 +8,14 @@ __maintainer__ = "Justin Furuness"
 __email__ = "jfuruness@gmail.com"
 __status__ = "Development"
 
-
+import logging
 import os
-from pynput.keyboard import Key, Controller
 import time
 
+from pynput.keyboard import Key, Controller
 
-class Work_Login:
+
+class WorkLogin:
     """Class that performs functions for login"""
 
     def __init__(self, conf_path=os.path.join(os.path.expanduser("~"),
@@ -44,9 +43,9 @@ class Work_Login:
         # I know I could be using proper logging
         # But this is supposed to be a quick package
         if not os.path.exists(self.conf_path):
-            print("It appears that you have not configured your work login")
-            print("Note that this is only for logging in through a terminal")
-            print("Please enter the commands, separated by the enter key")
+            logging.info("It appears that you have not configured your work login")
+            logging.info("Note that this is only for logging in through a terminal")
+            logging.info("Please enter the commands, separated by the enter key")
             cmds = [input("Next command, or hit enter:\n")]
             # Ugh neesd 3.6 compatibility, but with 3.8 could use walrus here
             while cmds[-1] != "":
@@ -91,4 +90,3 @@ class Work_Login:
         self.keyboard.release("'")
         self.keyboard.release(Key.shift)
         time.sleep(.5)
-

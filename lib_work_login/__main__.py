@@ -5,16 +5,16 @@
 
 __author__ = "Justin Furuness"
 __credits__ = ["Justin Furuness"]
-__Lisence__ = "MIT"
+__Lisence__ = "BSD"
 __maintainer__ = "Justin Furuness"
 __email__ = "jfuruness@gmail.com"
 __status__ = "Development"
 
 
-from .work_login import Work_Login
+from .work_login import WorkLogin
 
 def main():
-    Work_Login().login()
+    WorkLogin().login()
 
 def configure():
-    Work_Login().configure()
+    WorkLogin().configure()

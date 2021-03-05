@@ -5,24 +5,29 @@
 
 from setuptools import find_packages, setup
 
-__author__ = "Justin Furuness"
-__credits__ = ["Justin Furuness"]
-__Lisence__ = "MIT"
-__maintainer__ = "Justin Furuness"
-__email__ = "jfuruness@gmail.com"
-__status__ = "Development"
+with open("README.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
 
 setup(
     name="lib_work_login",
+    author="Justin Furuness",
+    author_email="jfuruness@gmail.com",
+    maintainer="Justin Furuness",
+    maintainer_email="jfuruness@gmail.com",
     version="0.1.1",
     url="https://github.com/jfuruness/lib_work_login.git",
     download_url='https://github.com/jfuruness/lib_work_login.git',
     keywords=['Furuness', 'Login', 'login', 'terminal'],
     license="BSD",
     description="Logs you into work",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    project_urls={
+        "Bug Tracker": "https://github.com/pypa/sampleproject/issues",
+    },
+    python_requires=">=3.6",
     packages=find_packages(),
     include_package_data=True,
-    zip_safe=False,
     install_requires=[
         'pynput'
     ],
@@ -38,4 +43,6 @@ setup(
             'login = lib_work_login.__main__:main',
             'configure = lib_work_login.__main__:configure',
         ]},
+    setup_requires=['pytest-runner'],
+    tests_require=['pytest'],
 )
