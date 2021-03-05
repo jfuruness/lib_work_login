@@ -1,4 +1,4 @@
-# lib\_work\_login_
+# lib\_work\_login
 
 This package is a very simple one I wrote in a half hour, so lower your expectations.
 
