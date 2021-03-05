@@ -10,7 +10,6 @@ This is because I have to go through several ssh gateways, move dirs, activiate 
 * [lib\_work\_login](#lib\_work\_login)
 * [Description](#package-description)
 * [Usage](#usage)
-* [Possible Future Improvements](#possible-future-improvements)
 * [Installation](#installation)
 * [Testing](#testing)
 * [Development/Contributing](#developmentcontributing)
